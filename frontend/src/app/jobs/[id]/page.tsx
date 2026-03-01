@@ -78,7 +78,7 @@ export default function JobDetailPage({ params }: Props) {
 
       {/* Breadcrumb */}
       <div className="bg-[#F8F8FD] border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-2 text-sm text-gray-400">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[125px] py-4 flex items-center gap-2 text-sm text-gray-400">
           <Link href="/" className="hover:text-[#3B3FDD] transition-colors">Home</Link>
           <span>/</span>
           <Link href="/jobs" className="hover:text-[#3B3FDD] transition-colors">Jobs</Link>
@@ -87,7 +87,7 @@ export default function JobDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[125px] py-10">
         <Link href="/jobs" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#3B3FDD] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" /> Back to jobs
         </Link>

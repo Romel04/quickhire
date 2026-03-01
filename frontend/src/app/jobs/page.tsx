@@ -76,7 +76,7 @@ function JobsContent() {
 
       {/* Page header */}
       <div className="bg-surface border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[125px] py-10">
           <h1 className="text-3xl font-black text-gray-900 mb-1">
             Find your <span className="text-accent">dream job</span>
           </h1>
@@ -118,7 +118,7 @@ function JobsContent() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[125px] py-8">
         {/* Mobile filter toggle */}
         <div className="flex items-center justify-between mb-4 lg:hidden">
           <p className="text-sm text-gray-500">

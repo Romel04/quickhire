@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,9 +14,14 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Epilogue', system-ui, sans-serif;
     color: #1a1a2e;
     background: #ffffff;
     overflow-x: hidden;
+  }
+
+  /* Inputs and form elements follow body font */
+  input, textarea, select, button {
+    font-family: 'Epilogue', system-ui, sans-serif;
   }
 }
