@@ -90,6 +90,9 @@ export const jobsApi = {
   create: (data: CreateJobData) =>
     api.post<ApiResponse<Job>>('/jobs', data),
 
+  update: (id: string, data: Partial<CreateJobData>) =>
+    api.patch<ApiResponse<Job>>(`/jobs/${id}`, data),
+
   delete: (id: string) =>
     api.delete<ApiResponse<null>>(`/jobs/${id}`),
 }

@@ -2,6 +2,7 @@ import {
   Controller,
   Get,
   Post,
+  Patch,
   Delete,
   Body,
   Param,
@@ -11,6 +12,7 @@ import {
 } from '@nestjs/common';
 import { JobsService } from './jobs.service';
 import { CreateJobDto } from './dto/create-job.dto';
+import { UpdateJobDto } from './dto/update-job.dto';
 import { FilterJobsDto } from './dto/filter-jobs.dto';
 
 @Controller('jobs')
@@ -46,6 +48,12 @@ export class JobsController {
   @HttpCode(HttpStatus.CREATED)
   create(@Body() dto: CreateJobDto) {
     return this.jobsService.create(dto);
+  }
+
+  // PATCH /api/jobs/:id
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() dto: UpdateJobDto) {
+    return this.jobsService.update(id, dto);
   }
 
   // DELETE /api/jobs/:id

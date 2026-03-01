@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateJobDto } from './dto/create-job.dto';
+import { UpdateJobDto } from './dto/update-job.dto';
 import { FilterJobsDto } from './dto/filter-jobs.dto';
 
 @Injectable()
@@ -86,6 +87,19 @@ export class JobsService {
   async create(dto: CreateJobDto) {
     const job = await this.prisma.job.create({ data: dto });
     return { success: true, data: job, message: 'Job created successfully' };
+  }
+
+  // PATCH /api/jobs/:id — update (admin)
+  async update(id: string, dto: UpdateJobDto) {
+    const job = await this.prisma.job.findUnique({ where: { id } });
+    if (!job) throw new NotFoundException(`Job with id "${id}" was not found`);
+
+    const updated = await this.prisma.job.update({
+      where: { id },
+      data: dto,
+      include: { _count: { select: { applications: true } } },
+    });
+    return { success: true, data: updated, message: 'Job updated successfully' };
   }
 
   // DELETE /api/jobs/:id — delete (admin)
