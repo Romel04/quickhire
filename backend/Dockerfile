@@ -12,8 +12,8 @@ COPY . .
 RUN npx prisma generate
 RUN npm run build
 
-# cache bust
 RUN echo "v2"
+RUN ls -la dist/
 
 EXPOSE 3000
 
